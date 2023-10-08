@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+        }
+        body {
+            background-color: #181818;
+        }
+        #arrows {
+            font-size: 25px;
+            width: 80px;
+        }
+        #test {
+            color: white;
+        }
+        img {
+            max-width: 600px;
+        }
+    </style>
+    <title>Epic</title>
+    <body>
+        <h1>
+            <button id="arrows" onclick=left()>⇦</button>
+            <button id="arrows"onclick=right()>⇨</button>
+        </h1>
+        <h2>
+        <input type="text" id="pinInput" placeholder="Enter PIN">
+        <button id="submitButton" onclick="checkPin()">Submit</button>
+        <img id="image">
+        </h2>
+        <h3>
+            <a id="llink">hi</a>
+        </h3>
+        <div id="test"></div>
+    </body>
+    <script>
+        var imageSelection = -5000;
+        function checkPin() {
+            const enteredPin = document.getElementById("pinInput").value;
+            var correctPin = 5612;
+            if(enteredPin == correctPin) {
+                imageSelection = -20;
+                const submitButton = document.getElementById("submitButton");
+                submitButton.remove();
+                const pinInput = document.getElementById("pinInput");
+                pinInput.remove();
+                const llink = document.getElementById("llink");
+                llink.remove();
+            }
+            if(enteredPin != correctPin) {
+                alert("Correct PIN!");
+                document.getElementById("llink").href = "https://free-memes-6685947.codehs.me/index.html"
+            }
+        }
+        function right() {
+            imageSelection = imageSelection + 1;
+            if(imageSelection == 1) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1158509930744131686/kr57kdg1ktmb1.png?ex=652da573&is=651b3073&hm=4e4265852a057d0ac36426121571211570e5250559d8fdaccedbfa32320417d8&";
+            }
+            if(imageSelection == 2) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1158509931083874435/bsfy5yryizqb1.jpg?ex=652da573&is=651b3073&hm=32a1fab3d8a4806d01a30122c61352e78659c2c30c0becc05b203168b78713d3&";
+            }
+            if(imageSelection == 3) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157767792200777810/KPE9GoHRrIA8SP5q67Dr.jpg?ex=65342cc7&is=6521b7c7&hm=c27bda43e469eb3e84d71f2599657e767a6e7efede49c54337cd71dce92faaf7&";
+            }
+            if(imageSelection == 4) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738205731356782/image-17.png?ex=65341139&is=65219c39&hm=24dbbcdd17389bcd287027b7a7494e3081eaba437fc3ffae06a7e89161c93463&";
+            }
+            if(imageSelection == 5) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738205479702649/SPOILER_dream_DN8xaQzPTi8yI25zxwrNXKn7_qGG0SIljHjeQD9AAsd0F_image_0.jpg?ex=65341139&is=65219c39&hm=921198a9afa76fa77a7796136bb7070ba01047e5b194ecd98a0ac7497a92e36b&";
+            }
+            if(imageSelection == 6) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738205169336340/IMG_4343.jpg?ex=65341139&is=65219c39&hm=e4704873f9f5c36ff1dc8708e58bac9a3a8982d744f8988ab00159d41385009f&";
+            }
+            if(imageSelection == 7) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738183874842655/image.png?ex=65341134&is=65219c34&hm=7415a4205509eaf6934b55ccdbbc2176440a1ed4e17d6ef95f6268baa89c3708&";
+            }
+            if(imageSelection == 8) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738183543500940/image.png?ex=65341134&is=65219c34&hm=88b5f09d4a26c851e62b117c23f17915ccf6784c653830f94a0f1be1116f0e80&";
+            }
+            if(imageSelection == 9) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738183182798911/image0.jpg?ex=65341134&is=65219c34&hm=84f3a4d63f363e184ac9f580aa3a29c132fcd294324bebb3420fa43fafd3e0f8&";
+            }
+            if(imageSelection == 10) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738182935318578/PfvZTHLInFOIsBR51ZaupaNXzy6hZ8AwvB7RgWFfKiTVa9Yk0wAHBUTaqu62jo1yrbOGLNQjjQeDRfsju9f8PRmimcTN6H4cAAAAASUVORK5CYII.png?ex=65341134&is=65219c34&hm=3a76fddac53dd45ef94c6c3dcb22b3ded997ff7ec9554cfb3d65819925782834&";
+            }
+            if(imageSelection == 11) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738182494933083/5uZlr3AIuSLrm6hHSJqm.jpg?ex=65341134&is=65219c34&hm=23c97b22838cb395054cdc77de4cc14179121bd2d688d6fdc96beca6faabd26e&";
+            }
+            if(imageSelection == 12) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738182696251482/fwweOXo85EofE8N3C0zR.jpg?ex=65341134&is=65219c34&hm=3f767f05a5b9e762744d6dd73e388c5703d750b693a3b6500507c4415f52b65b&";
+            }
+            if(imageSelection == 13) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738182226481212/CZMC4idqKyvPPmyDa0IO-removebg-preview.png?ex=65341134&is=65219c34&hm=f669386102e8e7a88507d2ab93e3d96ea05424da4bcb45ba5279c6900810f4af&";
+            }
+            if(imageSelection == 14) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738181958053961/00025-4233186469.png?ex=65341134&is=65219c34&hm=3ff1e5b797981facfe55a7aefec80f45fb9a60fb101821822d47922140c4e123&";
+            }
+            if(imageSelection == 15) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738181639295076/solo_1girl_1.2_black_corset_cleavage_puffy_short_sleeves_white_sleeves_tw_s-1162199238.png?ex=65341134&is=65219c34&hm=d7fe0d280ebd0aa82a2491fab834d011e7dce28995f114cb46baeac3272919d0&";
+            }
+            if(imageSelection == 16) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738181299540059/00110-4044528053.png?ex=65341134&is=65219c34&hm=3ece20f1cfb7094eab6502a9a4d72a2dbc50167aa09ad5e01dd0c9498ef05f2d&";
+            }
+            if(imageSelection == 17) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157732453478314024/le97s36frieb1.jpg?ex=65340bde&is=652196de&hm=0116ba995eceb13623b27949c2df26279ac4fa50e3ce1170d91c003829988590&";
+            }
+            if(imageSelection == 18) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157732453100818522/cnadif72vzcb1.jpg?ex=65340bde&is=652196de&hm=0b93dc353126e263aa6d11baea8917f38e7e778667c224f85220ee79ef915942&";
+            }
+        }
+        function left() {
+            imageSelection = imageSelection - 1;
+            if(imageSelection == 1) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1158509930744131686/kr57kdg1ktmb1.png?ex=652da573&is=651b3073&hm=4e4265852a057d0ac36426121571211570e5250559d8fdaccedbfa32320417d8&";
+            }
+            if(imageSelection == 2) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1158509931083874435/bsfy5yryizqb1.jpg?ex=652da573&is=651b3073&hm=32a1fab3d8a4806d01a30122c61352e78659c2c30c0becc05b203168b78713d3&";
+            }
+            if(imageSelection == 3) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157767792200777810/KPE9GoHRrIA8SP5q67Dr.jpg?ex=65342cc7&is=6521b7c7&hm=c27bda43e469eb3e84d71f2599657e767a6e7efede49c54337cd71dce92faaf7&";
+            }
+            if(imageSelection == 4) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738205731356782/image-17.png?ex=65341139&is=65219c39&hm=24dbbcdd17389bcd287027b7a7494e3081eaba437fc3ffae06a7e89161c93463&";
+            }
+            if(imageSelection == 5) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738205479702649/SPOILER_dream_DN8xaQzPTi8yI25zxwrNXKn7_qGG0SIljHjeQD9AAsd0F_image_0.jpg?ex=65341139&is=65219c39&hm=921198a9afa76fa77a7796136bb7070ba01047e5b194ecd98a0ac7497a92e36b&";
+            }
+            if(imageSelection == 6) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738205169336340/IMG_4343.jpg?ex=65341139&is=65219c39&hm=e4704873f9f5c36ff1dc8708e58bac9a3a8982d744f8988ab00159d41385009f&";
+            }
+            if(imageSelection == 7) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738183874842655/image.png?ex=65341134&is=65219c34&hm=7415a4205509eaf6934b55ccdbbc2176440a1ed4e17d6ef95f6268baa89c3708&";
+            }
+            if(imageSelection == 8) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738183543500940/image.png?ex=65341134&is=65219c34&hm=88b5f09d4a26c851e62b117c23f17915ccf6784c653830f94a0f1be1116f0e80&";
+            }
+            if(imageSelection == 9) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738183182798911/image0.jpg?ex=65341134&is=65219c34&hm=84f3a4d63f363e184ac9f580aa3a29c132fcd294324bebb3420fa43fafd3e0f8&";
+            }
+            if(imageSelection == 10) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738182935318578/PfvZTHLInFOIsBR51ZaupaNXzy6hZ8AwvB7RgWFfKiTVa9Yk0wAHBUTaqu62jo1yrbOGLNQjjQeDRfsju9f8PRmimcTN6H4cAAAAASUVORK5CYII.png?ex=65341134&is=65219c34&hm=3a76fddac53dd45ef94c6c3dcb22b3ded997ff7ec9554cfb3d65819925782834&";
+            }
+            if(imageSelection == 11) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738182494933083/5uZlr3AIuSLrm6hHSJqm.jpg?ex=65341134&is=65219c34&hm=23c97b22838cb395054cdc77de4cc14179121bd2d688d6fdc96beca6faabd26e&";
+            }
+            if(imageSelection == 12) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738182696251482/fwweOXo85EofE8N3C0zR.jpg?ex=65341134&is=65219c34&hm=3f767f05a5b9e762744d6dd73e388c5703d750b693a3b6500507c4415f52b65b&";
+            }
+            if(imageSelection == 13) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738182226481212/CZMC4idqKyvPPmyDa0IO-removebg-preview.png?ex=65341134&is=65219c34&hm=f669386102e8e7a88507d2ab93e3d96ea05424da4bcb45ba5279c6900810f4af&";
+            }
+            if(imageSelection == 14) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738181958053961/00025-4233186469.png?ex=65341134&is=65219c34&hm=3ff1e5b797981facfe55a7aefec80f45fb9a60fb101821822d47922140c4e123&";
+            }
+            if(imageSelection == 15) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738181639295076/solo_1girl_1.2_black_corset_cleavage_puffy_short_sleeves_white_sleeves_tw_s-1162199238.png?ex=65341134&is=65219c34&hm=d7fe0d280ebd0aa82a2491fab834d011e7dce28995f114cb46baeac3272919d0&";
+            }
+            if(imageSelection == 16) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157738181299540059/00110-4044528053.png?ex=65341134&is=65219c34&hm=3ece20f1cfb7094eab6502a9a4d72a2dbc50167aa09ad5e01dd0c9498ef05f2d&";
+            }
+            if(imageSelection == 17) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157732453478314024/le97s36frieb1.jpg?ex=65340bde&is=652196de&hm=0116ba995eceb13623b27949c2df26279ac4fa50e3ce1170d91c003829988590&";
+            }
+            if(imageSelection == 18) {
+                document.getElementById("image").src = "https://cdn.discordapp.com/attachments/1157722876049375242/1157732453100818522/cnadif72vzcb1.jpg?ex=65340bde&is=652196de&hm=0b93dc353126e263aa6d11baea8917f38e7e778667c224f85220ee79ef915942&";
+            }
+        }
+        
+    </script>
+</html>
