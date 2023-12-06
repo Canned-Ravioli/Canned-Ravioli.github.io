@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        #progress-container {
+          width: 50%;
+          margin: 20px auto;
+          
+        }
+        progress {
+            width: 100px;
+            height: 10px;
+            appearance: none; /* Remove the default appearance */
+            border-radius: 10px; /* Add rounded corners */
+            overflow: hidden; /* Hide overflow for rounded corners */
+        }
+
+        progress::-webkit-progress-bar {
+            background-color: #000000; /* Background color of the progress bar container */
+        }
+
+        progress::-webkit-progress-value {
+            background-color: #99003d; /* Color of the progress bar itself */
+        }
+
+        progress::-moz-progress-bar {
+            background-color: #99003d; /* Color of the progress bar for Firefox */
+        }
+        h1 {
+            margin-top: 500px;
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+        }
+        body {
+            background-color: #181818;
+        }
+        h5 {
+            text-align: center;
+        }
+        #random {
+            font-size: 20px;
+            width: 40px;
+            background-color: pink;
+            color: black;
+        }
+        #arrows {
+            font-size: 15px;
+            width: 40px
+        }
+        #test {
+            color: white;
+        }
+        #image {
+            margin-top: 30px;
+            max-width: 50;
+            max-height: 50;
+        }
+        #rotated {
+            font-size: 15px;
+            width: 30px;
+        }
+        h3 {
+            color: white;
+            margin-top: 30px;
+        }
+        h4 {
+            margin-top: 30px;
+            color: white;
+            text-align: center;
+        }
+        .extended-section {
+            height: 1000px;
+        }
+        #size {
+            font-size: 15px;
+            width: 30px;
+        }
+        h6 {
+            text-align: center;
+        }
+        #audioc {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            max-height: 5px;
+        }
+        #audio {
+            text-align: center;
+        }
+    </style>
+    <title>Epic</title>
+    <body>
+        <h1>
+            <button id="arrows" onclick="preImage()">⇦</button>
+            <button id="arrows"onclick="nextImage()">⇨</button>
+        </h1>
+        <h2>
+        <input autocomplete="off" aria-autocomplete="none" type="text" id="hgjhreyugreyugeyugre" placeholder="Enter PIN">
+        <button id="submitButton" onclick="checkPin()">Submit</button>
+        <div id="image_container">
+            <img id="image">
+        </div>    
+        <div id="progress-container">
+            <progress value="0" max="100" id="progress-bar"></progress>
+        </div>
+        </h2>
+        <h3>
+            <a id="llink">hi</a>
+        </h3>
+        <div id="audioc">
+            <object id="audioobj"></object>
+        </div>
+        <div id="test"></div>
+        <h4 id="imgnumber"></h4>
+        <h5>
+        <button id="random" onclick=random()>⚂</button>
+        </h5>
+        <h6>
+        <button id="size" onclick=decrease()>-</button>
+        <button id="size" onclick=increase()>+</button>
+        </h6>
+        <div class="extended-section">
+        </div>
+    </body>
+    <script>
+        var imagearray = [
+            "https://codehs.com/uploads/0581a424c971079216beab332d04119b",
+            "https://codehs.com/uploads/e154f9089924ab99f750427dee174093",
+            "https://codehs.com/uploads/440b659f44c7d3374ea37fe8a64eba09",
+            "https://codehs.com/uploads/5f7ea5fa0490f5f8fb62cdbb4067768c",
+            "https://codehs.com/uploads/43e8e6497de819670bf1410f68d30155",
+            "https://codehs.com/uploads/da361eca0e0755902fa128d75f20b90b",
+            "https://codehs.com/uploads/43e9a4f8b4c976e479c689cd27eb5217",
+            "https://codehs.com/uploads/4bd93bbb1bc0cfc7d468e05d30afa74a",
+            "https://codehs.com/uploads/7f14cd52d057b93e6a323b7cd9afe85a",
+            "https://codehs.com/uploads/c12966810e2fd59e5936ea02c7d15e47",
+            "https://codehs.com/uploads/23878bb5a8bccecbf5e52a7e30582cfa",
+            "https://codehs.com/uploads/3da668a835111fa369b4c5614bde3556",
+            "https://codehs.com/uploads/8ab55069dd1cd28a7dcce7ca9a7e3149",
+            "https://codehs.com/uploads/38807cbfdd8c807faf6910dd78077169",
+            "https://codehs.com/uploads/a70bbb9cc611300c34c0e19b84e8ad9e",
+            "https://codehs.com/uploads/b2d401aaabf56b96a92262710e8a52e6",
+            "https://codehs.com/uploads/5de7a3cda31e6bfff9aec60354107d4a",
+            "https://codehs.com/uploads/9a33d0464fc767d9b3bcb46911d1b4e4",
+            "https://codehs.com/uploads/8a64cdd6de7561070fca083046697bab",
+            "https://codehs.com/uploads/6a428619836aa2f05a325820707ee983",
+            "https://codehs.com/uploads/bd61e383ab2b8eca77b6733c9aeebeae",
+            "https://codehs.com/uploads/370f3e3555e1c536a40efedc824c13f3",
+            "https://codehs.com/uploads/b0ed861279dad79ff24364b2617b191b",
+            "https://codehs.com/uploads/52bc223abc88d92afba999495de6c602",
+            "https://codehs.com/uploads/80c3d90f29cfc3c4603c8f0c3ba44ab6",
+            "https://codehs.com/uploads/9a0f0df4c3d490014d0d476030cd8ee8",
+            "https://codehs.com/uploads/1d51d12832e67697d1d511c9aa520a95",
+            "https://codehs.com/uploads/df0657599674afa77e8cf36c799d2b37",
+        ];
+        var progressBar = document.getElementById('progress-bar');
+        var imageContainer = document.getElementById('image-container');
+        var image = document.querySelector('img');
+        var currentIndex = 0;
+        var open = 0;
+        var setWidth = 50;
+        var setHeight = 50;
+        function updateProgressBar(percentage) {
+            progressBar.value = percentage;
+        }
+        function handleImageLoad() {
+            // Set the progress bar to 100% when the image is fully loaded
+            updateProgressBar(100);
+        }
+        function handleImageProgress(event) {
+            if (event.lengthComputable) {
+                // Calculate the percentage of the image loaded
+                var percentage = (event.loaded / event.total) * 100;
+                 // Update the progress bar
+                updateProgressBar(percentage);
+            }
+        }
+        // Add event listeners to the image
+        image.addEventListener('load', handleImageLoad);
+        image.addEventListener('progress', handleImageProgress);
+        var imageSet = document.getElementById("image");
+        imageSet.style.maxWidth = setWidth + "px";
+        imageSet.style.maxHeight = setHeight + "px";
+        function decrease() {
+            var imageSet = document.getElementById("image");
+            setWidth = setWidth - 30;
+            setHeight = setHeight - 30;
+            imageSet.style.maxWidth = setWidth + "px";
+            imageSet.style.maxHeight = setHeight + "px"
+        }
+        function increase() {
+            var imageSet = document.getElementById("image");
+            setWidth = setWidth + 30;
+            setHeight = setHeight + 30;
+            imageSet.style.maxWidth = setWidth + "px";
+            imageSet.style.maxHeight = setHeight + "px";
+        }
+        function random() {
+            if (open == 1) {
+                currentIndex = Math.floor(Math.random() * imagearray.length) + 1;
+                var imgnumber = document.getElementById("imgnumber");
+                imgnumber.innerHTML = currentIndex;
+                document.getElementById("image").src = imagearray[currentIndex];
+            }
+        }
+        function rotateNeg() {
+            var image = document.getElementById("image");
+            image.style.transform = 'rotate(' + -90 + 'deg)';
+            image.style.filter = 'progid:DXImageTransform.Microsoft.BasicImage(rotation=3)';
+        }
+        function rotatePos() {
+            var image = document.getElementById("image");
+            image.style.transform = 'rotate(' + 0 + 'deg)';
+            image.style.filter = 'progid:DXImageTransform.Microsoft.BasicImage(rotation=0)';
+        }
+        function checkPin() {
+            var esjgkeiuwww = document.getElementById("hgjhreyugreyugeyugre").value;
+            var iegcenfgcenius = 5612;
+            if(esjgkeiuwww == iegcenfgcenius) {
+                setTimeout(display, 20000);
+            }
+            if(esjgkeiuwww != iegcenfgcenius) {
+                alert("Correct PIN!");
+                document.getElementById("llink").href = "https://free-memes-6685947.codehs.me/index.html";
+            }
+        }
+        function display() {
+            open = 1;
+            var imgnumber = document.getElementById("imgnumber");
+            imgnumber.innerHTML = currentIndex;
+            const submitButton = document.getElementById("submitButton");
+            submitButton.remove();
+            var hgjhreyugreyugeyugre = document.getElementById("hgjhreyugreyugeyugre");
+            hgjhreyugreyugeyugre.remove();
+            var llink = document.getElementById("llink");
+            llink.remove();
+            nextImage(0);
+        }
+        function nextImage() {
+            if (open == 1){
+                currentIndex = currentIndex + 1;
+                if (currentIndex < 0) {
+                    currentIndex = imagearray.length - 1;
+                }
+                if (currentIndex >= imagearray.length) {
+                    currentIndex = 0;
+                }
+                imgnumber = document.getElementById("imgnumber");
+                imgnumber.innerHTML = currentIndex;
+                document.getElementById("image").src = imagearray[currentIndex];
+            }
+        }
+        function preImage() {
+            if (open == 1){
+                currentIndex = currentIndex - 1;
+                if (currentIndex < 0) {
+                    currentIndex = imagearray.length - 1;
+                }
+                if (currentIndex >= imagearray.length) {
+                    currentIndex = 0;
+                }
+                imgnumber = document.getElementById("imgnumber");
+                imgnumber.innerHTML = currentIndex;
+                document.getElementById("image").src = imagearray[currentIndex];
+            }
+        }
+    </script>
+</html>
